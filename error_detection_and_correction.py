@@ -1,8 +1,3 @@
-from encodedecode import encode_text
-from encodedecode import decode_text
-
-
-
 def error_detection(data):
     output = []
     for byte in data:
@@ -17,9 +12,6 @@ def error_detection(data):
     return output
 
 
-
-
-
 def error_correction(data, errors):
     for i in range(len(errors)):
         if errors[i] == 0:
@@ -32,5 +24,3 @@ def error_correction(data, errors):
             else:
                 data[i][errors[i]] = 0
     return data
-
-

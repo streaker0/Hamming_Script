@@ -21,16 +21,6 @@ def encode(c):
         asciichar = asciichar // 2
         j = j - 1
 
-
-    # Set the data bits
-    bitsequence[2] = bin[0]
-    bitsequence[4] = bin[1]
-    bitsequence[5] = bin[2]
-    bitsequence[6] = bin[3]
-    bitsequence[8] = bin[4]
-    bitsequence[9] = bin[5]
-    bitsequence[10] = bin[6]
-    bitsequence[11] = bin[7]
     reverse_bin = bin[::-1]
     parity_control = 0
     reverse_control = 0
@@ -46,7 +36,6 @@ def encode(c):
 
     ######################## CALCULATE THE REMAINING HAMMING SEQUENCE #########################
     # CALCULATE N1
-    #+ (int(bitsequence[10]))
     if ((int(bitsequence[11])) + ((int(bitsequence[9])) + (int(bitsequence[7])) + (int(bitsequence[5])) + (int(bitsequence[3])) + (
             int(bitsequence[1]))) % 2 == 1):
         bitsequence[11] = 1
