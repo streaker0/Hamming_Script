@@ -1,16 +1,17 @@
-# This is a sample Python script.
+from encodedecode import encode_text
+from encodedecode import decode_text
+from error_detection_and_correction import error_detection
+from error_detection_and_correction import error_correction
+encoding = encode_text("HELLO WORLD")
+encoding[0][1] = 0
+encoding[1][1] = 0
+encoding[2][3] = 1
+detected = error_detection(encoding)
+print(detected)
+corrected = error_correction(encoding, detected)
+print(corrected)
+decoded = decode_text(corrected)
+print(decoded)
 
-# Press Shift+F10 to execute it or replace it with your code.
-# Press Double Shift to search everywhere for classes, files, tool windows, actions, and settings.
-
-
-def print_hi(name):
-    # Use a breakpoint in the code line below to debug your script.
-    print(f'Hi, {name}')  # Press Ctrl+F8 to toggle the breakpoint.
-
-
-# Press the green button in the gutter to run the script.
-if __name__ == '__main__':
-    print_hi('PyCharm')
 
 # See PyCharm help at https://www.jetbrains.com/help/pycharm/
